@@ -1,0 +1,32 @@
+.intro{
+    display: flex;
+    padding: 0;
+    margin-top: 0;
+    border-bottom: 1px dotted grey;
+}
+
+.website-name{
+    text-decoration: none;
+}
+
+.home-logo{
+    margin-left: 30px;
+}
+
+.intro.light{
+    background-color: white;
+    color: black;
+}
+
+.intro.dark{
+    background-color: #333;
+    color: white;
+}
+
+.website-name.light{
+    color: black;
+}
+
+.website-name.dark{
+    color: white;
+}

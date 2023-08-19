@@ -1,0 +1,27 @@
+.like-button {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.like-icon{
+  height: 20px;
+}
+
+.like-button.liked {
+  color: #6C63FF;
+}
+
+.icon {
+  margin-right: 4px;
+  font-size: 18px;
+}
+
+.like-count {
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.like-icon.dark{
+    filter: invert(100%);
+}

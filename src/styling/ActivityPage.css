@@ -1,0 +1,23 @@
+.main-section{
+    display: grid;
+    grid-template-columns: 3.1fr 7fr 3fr;
+}
+
+.main-section1{
+    display: grid;
+    height: 60vh;
+    grid-template-rows: 2fr 10fr;
+}
+
+.activity-page.light{
+    background-color: #f5f5f5;
+}
+
+.main-section2{
+    border-left: 1px dotted grey;
+    border-right: 1px dotted grey;
+}
+
+.activity-page.dark{
+    background-color: #222;
+}

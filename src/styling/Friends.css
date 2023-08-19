@@ -1,0 +1,44 @@
+.friends-section {
+  margin-left: 20px;
+  height: auto;
+  margin-right: 30px;
+  margin-top: 40px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 1.2);
+  padding-left: 20px;
+  padding-right: 40px;
+  border-radius: 10px;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  align-items: center;
+}
+
+.circle-cropped {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.each-friend {
+  display: flex;
+  align-items: center;
+}
+
+.friends-username {
+  margin-left: 10px;
+  font-weight: 625;
+}
+
+.friends-section.light {
+  color: black;
+  background-color: white;
+}
+
+.friends-section.dark{
+  color: white;
+  background-color: #333;
+}

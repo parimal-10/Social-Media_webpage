@@ -1,0 +1,110 @@
+.post-card {
+  margin-top: 20px;
+  margin-left: 150px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  margin-right: 80px;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+
+.user-info {
+  display: flex;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  align-items: center;
+}
+
+.profile-image {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.home-username {
+  margin-left: 10px;
+}
+
+.circle-cropped {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-images {
+  margin-left: 40px;
+  border-radius: 15px;
+  background-color: black;
+  position: relative;
+  width: 500px;
+  overflow: hidden;
+}
+
+.slick-slider {
+  max-width: 100%;
+  margin: 0;
+}
+
+.slick-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slick-slide img {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.arrow:hover {
+  background-color: transparent;
+}
+
+.right {
+  right: -10px;
+}
+
+.left {
+  left: -10px;
+}
+
+.post-caption{
+  margin-left: 40px;
+  margin-right: 60px;
+}
+
+.like-dislike{
+  padding: 2%;
+  display: flex;
+  gap: 2%;
+}
+
+.post-card.light{
+  color: black;
+  background-color: white;
+}
+
+.post-card.dark{
+  color: white;
+  background-color: #333;
+}

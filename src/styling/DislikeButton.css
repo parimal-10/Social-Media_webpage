@@ -1,0 +1,30 @@
+.dislike-button {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dislike-icon {
+    transform: scaleY(-1);
+    height: 20px;
+}
+
+.dislike-button.liked {
+  color: red;
+}
+
+.icon {
+  margin-right: 4px;
+  font-size: 18px;
+}
+
+.dislike-count {
+  font-size: 16px;
+  margin-left: 4px;
+}
+
+.dislike-icon.dark{
+    filter: invert(100%);
+}
+
+
