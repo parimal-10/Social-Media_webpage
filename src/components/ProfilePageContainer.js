@@ -3,9 +3,7 @@ import ProfilePage from './ProfilePage';
 
 function ProfilePageContainer() {
     return (
-        <div>
-            <ProfilePage />
-        </div>
+        <ProfilePage />
     );
 };
 

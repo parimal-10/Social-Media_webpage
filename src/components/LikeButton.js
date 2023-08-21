@@ -2,11 +2,11 @@ import React, { useState } from 'react'
 import { useDarkMode } from './DarkModeContext'
 import '../styling/LikeButton.css'
 
-function LikeButton() {
+function LikeButton(props) {
   const { darkMode } = useDarkMode();
 
   const [liked, setLiked] = useState(false);
-  const [likeCount, setLikeCount] = useState(100);
+  const [likeCount, setLikeCount] = useState(props.likes);
 
   const handleLikeClick = () => {
     setLiked(!liked);

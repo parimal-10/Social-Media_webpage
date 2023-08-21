@@ -71,6 +71,43 @@ const CurrentUserData = {
       profiePicture: "https://e0.pxfuel.com/wallpapers/731/1014/desktop-wallpaper-sherlock-season-4-benedict-cumberbatch-sherlock-holmes-martin-man-tv-series-for-iphone-android-mobile-and.jpg",
       userName: "sherlock_holmes",
     }
+  ],
+  community: [
+    {
+      id_com: 1,
+      backgroud: 'https://domf5oio6qrcr.cloudfront.net/medialibrary/10190/GettyImages-499689946.jpg',
+      profilePicture: 'https://media.self.com/photos/5b048339fb856d7d3d02375d/1:1/w_3660,h_3660,c_limit/first-backpacking-trip.jpg',
+      status: 'Public',
+      memberCount: 11
+    },
+    {
+      id_com: 2,
+      backgroud: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzdIK4QC2N5eveMWFZBJpXgSdUI85cpJrT7A&usqp=CAU',
+      profilePicture: 'https://149695847.v2.pressablecdn.com/wp-content/uploads/2022/07/laptop.jpg',
+      status: 'Public',
+      memberCount: 5
+    },
+    {
+      id_com: 3,
+      backgroud: 'https://images.moneycontrol.com/static-mcnews/2023/05/Health-benefits-of-cycling.jpg?impolicy=website&width=1600&height=900',
+      profilePicture: 'https://assets.vogue.in/photos/5f36475d93fbd755fe1ac4b3/1:1/pass/undefined',
+      status: 'Public',
+      memberCount: 7
+    },
+    {
+      id_com: 4,
+      backgroud: 'https://www.teknosassociates.com/wp-content/uploads/2020/03/teknos-associates-gamers-make-money-image001.jpg',
+      profilePicture: 'https://img.freepik.com/premium-vector/gamer-player-logo-mascot-vector-illustration_382438-608.jpg',
+      status: 'Public',
+      memberCount: 9
+    },
+    {
+      id_com: 5,
+      backgroud: 'https://www.pangolinphoto.com/wp-content/uploads/2020/05/Guest-with-camera-gear-on-safari-in-Botswana-Pangolin-Photo-Safaris-scaled.webp',
+      profilePicture: 'https://www.artinstitutes.edu/~/media/ai/main/images/publications/blog/onlinephotonov/photographyphoto.ashx?modified=20181123034155&la=en&hash=061F51B0825AEC249CED44DB5E32432D3FEA05C2',
+      status: 'Public',
+      memberCount: 8
+    }
   ]
 };
 

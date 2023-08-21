@@ -18,7 +18,7 @@ function ProfilePage() {
             <div className='profile'>
                 <div className='left-bar'>
                     <SearchBar />
-                    <HomeNavbar className='navbar' />
+                    <HomeNavbar/>
                 </div>
                 <div className='profile-main-content'>
                     <ProfileInitialContainer />

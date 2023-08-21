@@ -1,0 +1,9 @@
+.community-page{
+    display: flex;
+    flex-direction: column;
+}
+
+.community-main{
+    display: grid;
+    grid-template-columns: 3fr 7fr 3fr;
+}

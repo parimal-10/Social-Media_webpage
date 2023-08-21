@@ -1,61 +1,87 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDarkMode } from './DarkModeContext'
-import Slider from 'react-slick'
 import LikeButton from './LikeButton'
+import { createApi } from 'unsplash-js'
 import '../styling/PostCard.css'
-import DislikeButton from './DislikeButton'
 
-function PostCard(props) {
+const api = createApi({
+  accessKey: 'gJfwv_BombBo_aQZBNYn4usdJ0tgGqDDkl28v_nlzDI',
+});
+
+function PostCard() {
   const { darkMode } = useDarkMode();
+  const [randomPhotos, setRandomPhotos] = useState([]);
+  const [loadingMore, setLoadingMore] = useState(false);
 
-  const RightArrow = ({ onClick }) => (
-    <div className="arrow right" onClick={onClick}>
-      &gt;
-    </div>
-  );
+  const loadMorePosts = () => {
+    if (!loadingMore) {
+      setLoadingMore(true);
 
-  const LeftArrow = ({ onClick }) => (
-    <div className="arrow left" onClick={onClick}>
-      &lt;
-    </div>
-  );
+      api.photos.getRandom({ count: 5 })
+        .then((result) => {
+          if (result.response) {
+            setRandomPhotos(prevPhotos => [...prevPhotos, ...result.response]);
+            setLoadingMore(false);
+          }
+        })
+        .catch((error) => {
+          console.log('Failed to fetch random photos', error);
+          setLoadingMore(false);
+        });
+    }
+  };
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <RightArrow />,
-    prevArrow: <LeftArrow />
+  useEffect(() => {
+    loadMorePosts();
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.scrollHeight &&
+      randomPhotos.length > 0
+    ) {
+      setLoadingMore(true);
+      setTimeout(() => {
+        loadMorePosts();
+      }, 3000);
+    }
   };
 
   return (
     <div className={`post-card ${darkMode ? 'dark' : 'light'}`}>
-      <div className="user-info">
-        <div className='profile-image'>
-          <img src={props.post.user.profilePicture} alt={props.post.user.username} className='circle-cropped' />
-        </div>
-        <div className='home-username'><h4>{props.post.user.username}</h4></div>
-      </div>
-      {props.post.images && (
-        <div className="post-images">
-          <Slider {...settings}>
-            {props.post.images.map((image, index) => (
-              <div key={index}>
-                <img src={image} alt={`Post ${index}`} />
+      {randomPhotos.map(photo => (
+        <div key={photo.id}>
+          {photo.user && (
+            <div className="user-info">
+              <div className='profile-image'>
+                <img src={photo.user.profile_image.large} alt={photo.user.username} className='circle-cropped' />
               </div>
-            ))}
-          </Slider>
+              <div className='home-username'><h4>{photo.user.username}</h4></div>
+            </div>
+          )}
+          <div className="post-images" style={{ marginBottom: '0' }}>
+            <img src={photo.urls.raw + "&w=500"} alt={photo.description || ''} />
+          </div>
+          {photo.description && (
+            <p className='post-caption' style={{ marginBottom: '0' }}>
+              <strong>{photo.user.username}</strong> {photo.description}
+            </p>
+          )}
+          <div className={`like-dislike ${darkMode ? 'dark' : 'light'}`}>
+            <LikeButton likes={photo.likes} />
+          </div>
         </div>
-      )}
-      <p className='post-caption' style={{marginBottom:'0'}}><strong>{props.post.user.username}</strong> {props.post.content}</p>
-      <div className={`like-dislike ${darkMode ? 'dark' : 'light'}`}>
-        <LikeButton />
-        <DislikeButton />
-      </div>
+      ))}
+      {loadingMore && <p className='loading'>Loading more posts...</p>}
     </div>
-  )
+  );
 }
 
 export default PostCard;

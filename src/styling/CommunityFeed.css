@@ -1,0 +1,25 @@
+.community-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 700px;
+}
+
+.community-group{
+    width: 100px;
+    height: 100px;
+    gap: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.community-group-background{
+    width: 100%;
+    height: auto;
+}
+
+.community-group-profile-picture {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+}

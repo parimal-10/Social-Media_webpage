@@ -25,7 +25,7 @@ function HomeNavbar() {
                     <h4>Profile</h4>
                 </div>
             </Link>
-            <Link className={`home-navbar-logo ${darkMode ? 'dark' : 'light'}`}>
+            <Link to="/community" className={`home-navbar-logo ${darkMode ? 'dark' : 'light'}`}>
                 <div>
                     <img src={community} height={70}></img>
                     <h4>Community</h4>
