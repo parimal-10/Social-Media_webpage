@@ -55,15 +55,16 @@ function PostCard() {
   };
 
   return (
-    <div className={`post-card ${darkMode ? 'dark' : 'light'}`}>
+    <div className={`post-section ${darkMode ? 'dark' : 'light'}`}>
       {randomPhotos.map(photo => (
-        <div key={photo.id}>
+        <div className={`post-card ${darkMode ? 'dark' : 'light'}`} key={photo.id}>
           {photo.user && (
             <div className="user-info">
               <div className='profile-image'>
                 <img src={photo.user.profile_image.large} alt={photo.user.username} className='circle-cropped' />
               </div>
               <div className='home-username'><h4>{photo.user.username}</h4></div>
+              <div className='post-created-at'><p>{photo.location.name}</p></div>
             </div>
           )}
           <div className="post-images" style={{ marginBottom: '0' }}>
